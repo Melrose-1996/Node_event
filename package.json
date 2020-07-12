@@ -1,0 +1,27 @@
+{
+  "name": "Node_events",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express-jwt": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mysql": "^2.18.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Melrose-1996/Node_event.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Melrose-1996/Node_event/issues"
+  },
+  "homepage": "https://github.com/Melrose-1996/Node_event#readme"
+}
