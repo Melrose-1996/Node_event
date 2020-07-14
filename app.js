@@ -49,7 +49,10 @@ app.use((err, req, res, next) => {
     // }
     //console.log(joi.ValidationError);
     if (err instanceof joi.ValidationError) {
-        return res.err(err)
+        return res.send({
+            status: 1,
+            msg: err.details[0].message
+        })
     }
     //在身份验证失败之后，捕获并处理Token认证失败后的错误
     if (err.name === "UnauthorizedError") return res.err("身份认证失败！")
