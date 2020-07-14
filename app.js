@@ -33,9 +33,13 @@ const expressJWT = require("express-jwt")
 //使用全局中间件来解析token字符串，unless方法用来指定哪些接口不需要进行Token的身份验证
 app.use(expressJWT({ secret: config.jwtSecretKey }).unless({ path: [/^\/api\//] }))
 
-//导入router模块
+//导入user 的router模块
 const userRouter = require("./router/user")
 app.use("/api", userRouter)
+
+//导入userinfo 的router模块
+const userinfoRouter = require("./router/userinfo")
+app.use("/my", userinfoRouter)
 
 //验证失败的中间件，放在路由之后，进行全局捕获
 app.use((err, req, res, next) => {
