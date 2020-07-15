@@ -42,6 +42,7 @@ exports.reg_login_schema = {
 exports.update_userinfo_schema = {
     body: {
         id,
+        username,
         nickname,
         email
     }

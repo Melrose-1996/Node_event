@@ -12,6 +12,9 @@ app.use(cors())
 //配置解析表单数据的中间件
 app.use(express.urlencoded({ extended: false }))
 
+//托管为静态资源
+app.use("/uploads", express.static("./uploads"))
+
 //在所有路由之前，封装res.err函数中间件
 app.use((req, res, next) => {
     //status的默认值为1，表示失败的情况
@@ -44,6 +47,10 @@ app.use("/my", userinfoRouter)
 //导入artcate 的router模块
 const artcateRouter = require("./router/artcate")
 app.use("/my/article", artcateRouter)
+
+//导入article 的router模块
+const articleRouter = require("./router/article")
+app.use("/my/article", articleRouter)
 
 //验证失败的中间件，放在路由之后，进行全局捕获
 app.use((err, req, res, next) => {
