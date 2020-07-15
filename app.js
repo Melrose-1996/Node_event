@@ -41,6 +41,10 @@ app.use("/api", userRouter)
 const userinfoRouter = require("./router/userinfo")
 app.use("/my", userinfoRouter)
 
+//导入artcate 的router模块
+const artcateRouter = require("./router/artcate")
+app.use("/my/article", artcateRouter)
+
 //验证失败的中间件，放在路由之后，进行全局捕获
 app.use((err, req, res, next) => {
     //数据验证失败
